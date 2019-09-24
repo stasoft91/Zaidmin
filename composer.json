@@ -1,0 +1,15 @@
+{
+    "name": "stasoft/zaidmin",
+    "description": "CLI admin for manging NGINX hosts",
+    "type": "project",
+    "require": {
+        "league/climate": "^3.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stas",
+            "email": "stasoft91@gmail.com"
+        }
+    ]
+}
