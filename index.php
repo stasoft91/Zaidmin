@@ -20,13 +20,13 @@ if ($response === 'a') {
     $input = $cli->input('Vhost name:');
     $vhost_name = $input->prompt();
 
-    $input = $cli->input('Base path to project folder root [/home/'.get_current_user().'/www/'.$vhost_name.']:');
+    $input = $cli->input('Base path to project`s root folder [/home/'.get_current_user().'/www/'.$vhost_name.']:');
     $input->defaultTo('/home/'.get_current_user().'/www/');
     $path = $input->prompt();
 
-    $input = $cli->input('Projects public folder [public]:');
+    $input = $cli->input('Project`s public folder [public]:');
     $input->defaultTo('public');
-    $path = $input->prompt();
+    $public = $input->prompt();
 
 
     $template = '
@@ -36,7 +36,7 @@ server {
 
         server_name '.$vhost_name.';
         set $base '.$path.';
-        root $base/public;
+        root $base/'.$public.';
 
         # index.php
         index index.php;
